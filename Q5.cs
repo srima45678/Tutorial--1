@@ -4,23 +4,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tutorial__1
+namespace Tutorial__1.Tutorial___2
 {
     internal class Q5
     {
-        static void Main(String[] args)
+        static void Main(string[] args)
         {
-            // Program to find factorial of a number
-            int n, fact = 1;
-            Console.WriteLine("Enter Number : ");
-            string str = Console.ReadLine();
-            n = Convert.ToInt32(str);
-            for (int i = 1; i <= n; i++)
+            Console.WriteLine("Enter the no of array: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter the elements: ");
+            for (int i = 0; i < n; i++)
             {
-                fact = fact * i;
+                arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            Console.WriteLine("Factorial : {0}", fact);
-            Console.Read();
+
+            int max = arr[0];
+            int min = arr[0];
+
+            for (int i = 1; i < n; i++)
+            {
+                if (arr[i] > max)
+                    max = arr[i];
+
+                if (arr[i] < min)
+                    min = arr[i];
+            }
+            Console.WriteLine($"\nMaximum element: {max}");
+            Console.WriteLine($"Minimum element: {min}");
         }
     }
 }

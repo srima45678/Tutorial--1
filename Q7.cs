@@ -4,24 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tutorial__1
+namespace Tutorial__1.Tutorial___2
 {
     internal class Q7
     {
         static void Main(string[] args)
         {
-            int num1, res, i;
-            Console.WriteLine("Enter a number:");
-            num1 = Convert.ToInt32(Console.ReadLine());
-            i = 1; //Initialization
-            //Check whether condition matches or not
-            while (i <= 10)
+            Console.WriteLine("Enter number of elements: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int[] arr = new int[n];
+
+            Console.WriteLine("Enter the elements: ");
+            for (int i = 0; i < n; i++)
             {
-                res = num1 * i;
-                Console.WriteLine("{0} x {1} = {2}", num1, i, res);
-                i++; //Increment by one
+                arr[i] = Convert.ToInt32(Console.ReadLine());
             }
-            Console.ReadLine();
+
+            // Sorting in descending order
+            Array.Sort(arr);
+            Array.Reverse(arr);
+
+            Console.WriteLine("\nArray in descending order: ");
+            foreach (int num in arr)
+            {
+                Console.WriteLine(num);
+            }
         }
     }
 }

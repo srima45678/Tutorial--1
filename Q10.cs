@@ -4,24 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tutorial__1
+namespace Tutorial__1.Tutorial___2
 {
     internal class Q10
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your mobile number: ");
-            string mobileNumber = Console.ReadLine();
+            int[] original = new int[5];
+            int[] copy = new int[5];
 
-            if (mobileNumber.Length < 5)
+            Console.WriteLine("Enter 5 elements for the original array:");
+
+            for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine("Mobile number is too short.");
-                return;
+                Console.Write($"Element {i + 1}: ");
+                original[i] = Convert.ToInt32(Console.ReadLine());
             }
-            string firstPart = mobileNumber.Substring(0, mobileNumber.Length - 5);
 
-            string maskedNumber = firstPart + "XXXXX";
-            Console.WriteLine("Masked mobile number: " + maskedNumber);
+            // Copy elements
+            for (int i = 0; i < 5; i++)
+            {
+                copy[i] = original[i];
+            }
+
+            // Display copied array
+            Console.WriteLine("\nElements in the copied array:");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine(copy[i]);
+            }
         }
     }
 }

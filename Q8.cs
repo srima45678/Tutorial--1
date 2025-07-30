@@ -1,25 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tutorial__1
+namespace Tutorial__1.Tutorial___2
 {
     internal class Q8
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            // Declaring String
-            string s1 = "John F Kennedy";
+            // Create array and input values
+            int[] arr = new int[5];
+            Console.WriteLine("Enter 5 numbers:");
 
-            // Convert string to uppercase
-            string s2 = s1.ToUpper();
+            for (int i = 0; i < 5; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
 
-            //Printing the lowercase to uppercase
-            Console.WriteLine("String Before Uppercase:" + s1);
-            Console.WriteLine("String After Uppercase:" + s2);
+            // Ask for position to delete
+            Console.Write("Enter position to delete (1 to 5): ");
+            int pos = Convert.ToInt32(Console.ReadLine());
+
+            // Delete the element by shifting
+            if (pos < 1 || pos > 5)
+            {
+                Console.WriteLine("Invalid position!");
+            }
+            else
+            {
+                Console.WriteLine("Array after deleting element at position " + pos + ":");
+                for (int i = 0; i < 5; i++)
+                {
+                    if (i == pos - 1)
+                        continue; // skip the deleted element
+                    Console.WriteLine(arr[i]);
+                }
+            }
         }
     }
 }

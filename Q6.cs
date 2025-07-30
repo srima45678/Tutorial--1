@@ -4,47 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tutorial__1
+namespace Tutorial__1.Tutorial___2
 {
     internal class Q6
     {
         static void Main(string[] args)
         {
-            int a, b, c, result;
-            string str;
+            {
+                Console.Write("Enter the number of elements: ");
+                int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.Write("Enter Number 1 : ");
-            str = Console.ReadLine();
+                int[] arr = new int[n];
+                int[] even = new int[n];
+                int[] odd = new int[n];
+                int evenCount = 0, oddCount = 0;
 
-            //Missing statement
+                Console.WriteLine("Enter the elements:");
+                for (int i = 0; i < n; i++)
+                {
+                    arr[i] = Convert.ToInt32(Console.ReadLine());
 
-            a = Convert.ToInt32(str);
+                    if (arr[i] % 2 == 0)
+                    {
+                        even[evenCount] = arr[i];
+                        evenCount++;
+                    }
+                    else
+                    {
+                        odd[oddCount] = arr[i];
+                        oddCount++;
+                    }
+                }
 
-            Console.Write("Enter Number 2 : ");
+                // Display even numbers
+                Console.WriteLine("\nEven elements:");
+                for (int i = 0; i < evenCount; i++)
+                {
+                    Console.WriteLine(even[i]);
+                }
 
-            //Missing statement
-            str = Console.ReadLine();
-            b = Convert.ToInt32(str);
-
-            Console.Write("Enter Number 3 : ");
-
-            str = Console.ReadLine();
-            c = Convert.ToInt32(str);
-            //Missing statement
-
-            result = Sum(a, b, c);
-
-            //Missing statement
-            Console.WriteLine("Sum : {0}", result);
-            Console.Read();
-        }
-        static int Sum(int x, int y, int z)
-
-        {
-            int res;
-            res = x + y + z;
-            return res;
-
+                // Display odd numbers
+                Console.WriteLine("\nOdd elements:");
+                for (int i = 0; i < oddCount; i++)
+                {
+                    Console.WriteLine(odd[i]);
+                }
+            }
         }
     }
 }
